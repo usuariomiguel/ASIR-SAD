@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  db:
+    image: fernandorodriguezmoron/mysql
+    container_name: mysql
+    environment:
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: usuario
+      MYSQL_ROOT_PASSWORD: root 
+    ports:
+      # <Port exposed> : < MySQL Port >
+      - 3306:3306
+    volumes:
+      - database:/var/lib/mysql
+      
+  web:
+    image: httpd
+    container_name: apache
+    ports:
+      - "8080:80"
+    depends_on:
+      - db 
+      
+volumes:
+  database:
