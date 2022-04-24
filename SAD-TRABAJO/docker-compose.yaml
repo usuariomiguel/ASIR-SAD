@@ -1,12 +1,12 @@
 version: '3.3'
 services:
   db:
-    image: fernandorodriguezmoron/mysql
+    image: miguelangelcantos/mysql
     container_name: mysql
     environment:
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: usuario
-      MYSQL_ROOT_PASSWORD: root 
+      MYSQL_USER: miguel
+      MYSQL_PASSWORD: miguel
+      MYSQL_ROOT_PASSWORD: miguel
     ports:
       # <Port exposed> : < MySQL Port >
       - 3306:3306
